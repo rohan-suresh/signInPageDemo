@@ -1,24 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  zybook_clicked_action: null,
-  zybook: null,
-  classNames: ['render-zybook'],
-  subjects: null,
-  term_description: function () {
-    //console.log(this.get('library'));
-    if (this.get('zybook.academic_term.name') == 'None') {
-      return '';
-    } else {
-      return this.get('zybook.academic_term.name') + ' ' + this.get('zybook.academic_term.year');
+    zybook_clicked_action: null,
+    zybook: null,
+    classNames: [ 'render-zybook' ],
+    subjects: null,
+    term_description: function() {
+        if (this.get('zybook.academic_term.name') === 'None') {
+        return '';
     }
+      return this.get('zybook.academic_term.name') + ' ' + this.get('zybook.academic_term.year');
   }.property('zybook.academic_term.name', 'zybook.academic_term.year'),
-  subject_description: function () {
-    let subs = new Array();
+  subject_description: function() {
+    const subs = [];
     this.get('zybook.subjects').forEach((sub) => {
       subs.push(sub.name)
     });
-    let firstTwoSubs = new Array();
+    let firstTwoSubs = [];
     firstTwoSubs = subs;
     if (subs.length > 2) {
       firstTwoSubs = subs.slice(0, 2);
