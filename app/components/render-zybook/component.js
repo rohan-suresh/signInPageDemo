@@ -7,12 +7,13 @@ export default Ember.Component.extend({
     subjects: null,
     term_description: function() {
         if (this.get('zybook.academic_term.name') === 'None') {
-        return '';
-    }
-      return this.get('zybook.academic_term.name') + ' ' + this.get('zybook.academic_term.year');
-  }.property('zybook.academic_term.name', 'zybook.academic_term.year'),
-  subject_description: function() {
+            return '';
+        }
+        return this.get('zybook.academic_term.name') + ' ' + this.get('zybook.academic_term.year');
+    }.property('zybook.academic_term.name', 'zybook.academic_term.year'),
+    subject_description: function() {
     const subs = [];
+
     this.get('zybook.subjects').forEach((sub) => {
       subs.push(sub.name)
     });
