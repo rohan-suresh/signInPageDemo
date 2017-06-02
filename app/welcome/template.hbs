@@ -1,0 +1,12 @@
+<div class = "top">
+  <body> Sign in </body>
+</div>
+
+  <div class="center">
+  {{input type="email" placeholder="Email" name="email" value=store_email}}
+    {{input type="password" placeholder="Password" name="pass" value=store_password}}
+    <button class="button" {{action "login"}}> SIGN IN </button>
+    <div class="check">
+      {{errorMessage}}
+    </div>
+  </div>

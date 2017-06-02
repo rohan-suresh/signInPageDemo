@@ -1,0 +1,41 @@
+.render-zybook {
+
+  .books {
+    text-align: center;
+    width: 200px;
+    height: 250px;
+    font-size: 16px;
+    background-color: darkorange;
+    margin: 10px;
+    border: solid black 2px;
+  }
+
+  .term_description {
+    margin-top: 30px;
+  }
+
+  .subject_description {
+    margin-top: 50px;
+  }
+
+}
+
+div.top-left {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #528CE0;
+  text-align: left;
+  font-size: 24px;
+  color: #FFFFFF;
+  font-family: "Apple SD Gothic Neo";
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+
+div.zybooks {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}

@@ -1,0 +1,9 @@
+<div class="top-left">
+  Library
+</div>
+
+<div class="zybooks">
+{{#each model as |libraryUnit|}}
+  {{render-zybook zybook=libraryUnit zybook_clicked_action=(action "componentClicked")}}
+{{/each}}
+</div>
