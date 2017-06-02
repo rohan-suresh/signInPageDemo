@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   authentication: Ember.inject.service('session'),
   beforeModel() {
-    if (!this.get('authentication.auth_token')) {
+    if (!this.get('authentication.session.auth_token')) {
       this.replaceWith('welcome');
     }
   },

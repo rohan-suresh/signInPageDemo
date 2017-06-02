@@ -11,6 +11,7 @@ export default Ember.Service.extend({
         contentType: "application/json",
         data: JSON.stringify({"email": email, "password": password}),
         success: (serverResponse) => {
+          console.log('test');
           this.set('user', serverResponse.user);
           this.set('session', serverResponse.session);
           if (serverResponse.success) {
