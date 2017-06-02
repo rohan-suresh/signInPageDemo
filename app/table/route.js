@@ -10,10 +10,10 @@ export default Ember.Route.extend({
     model(params) {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
-                url: 'https://zyserver-dev.zybooks.com/v1/user/' + this.get('authentication.user.user_id') + '/zybooks',
+                url: `https://zyserver-dev.zybooks.com/v1/user/${this.get('authentication.user.user_id')}/zybooks`,
                 method: 'GET',
                 contentType: null,
-                data: { 'auth_token': this.get('authentication.session.auth_token') },
+                data: { auth_token: this.get('authentication.session.auth_token') },
                 success: function(serverResponse) {
                     let selected_zybook = null;
 

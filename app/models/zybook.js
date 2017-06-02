@@ -6,7 +6,7 @@ export default Ember.Object.extend({
     zybook_code: null,
     subjects: null,
     initialize: function(json_object) {
-      this.setProperties(json_object);
-      return this;
-    }
+        this.setProperties(json_object);
+        return this;
+    },
 });
