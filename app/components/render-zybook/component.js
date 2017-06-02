@@ -9,25 +9,26 @@ export default Ember.Component.extend({
         if (this.get('zybook.academic_term.name') === 'None') {
             return '';
         }
-        return this.get('zybook.academic_term.name') + ' ' + this.get('zybook.academic_term.year');
+        return `${this.get('zybook.academic_term.name')} ${this.get('zybook.academic_term.year')}`;
     }.property('zybook.academic_term.name', 'zybook.academic_term.year'),
     subject_description: function() {
-    const subs = [];
+        const subs = [];
 
-    this.get('zybook.subjects').forEach((sub) => {
-      subs.push(sub.name)
-    });
-    let firstTwoSubs = [];
-    firstTwoSubs = subs;
-    if (subs.length > 2) {
-      firstTwoSubs = subs.slice(0, 2);
-    }
-    let firstTwoSubString = '';
-    firstTwoSubs.forEach((s) => {
-      firstTwoSubString += s + ', ';
-    });
-    //subString = subString.slice(0, -2);
-    firstTwoSubString = firstTwoSubString.slice(0, -2);
-    return firstTwoSubString;
-  }.property('zybook.subjects.@each.name'),
+        this.get('zybook.subjects').forEach(sub => {
+            subs.push(sub.name);
+        });
+        let firstTwoSubs = [];
+
+        firstTwoSubs = subs;
+        if (subs.length > 2) {
+            firstTwoSubs = subs.slice(0, 2);
+        }
+        let firstTwoSubString = '';
+
+        firstTwoSubs.forEach(s => {
+            firstTwoSubString = `${firstTwoSubString}${s}, `;
+        });
+        firstTwoSubString = firstTwoSubString.slice(0, -2);
+        return firstTwoSubString;
+    }.property('zybook.subjects.@each.name'),
 });

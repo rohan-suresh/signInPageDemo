@@ -12,13 +12,15 @@ export default Ember.Route.extend({
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
                 url: `https://zyserver-dev.zybooks.com/v1/user/${this.get('authentication.user.user_id')}/zybooks`,
-                method: "GET",
+                method: 'GET',
                 contentType: null,
                 data: { auth_token: this.get('authentication.session.auth_token') },
                 success: function(serverResponse) {
-                    let user_zybooks = [];
-                    serverResponse.zybooks.forEach((zybook) => {
+                    const user_zybooks = [];
+
+                    serverResponse.zybooks.forEach(zybook => {
                         const zyBook = ZyBookModel.create({}).initialize(zybook);
+
                         user_zybooks.push(zyBook);
                     });
                     if (serverResponse.success) {
@@ -30,8 +32,8 @@ export default Ember.Route.extend({
                 },
 
             });
-        })
+        });
 
-    }
+    },
 
 });
