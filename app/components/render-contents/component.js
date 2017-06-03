@@ -5,8 +5,8 @@ export default Ember.Component.extend({
     auth: Ember.inject.service('session'),
     classNames: [ 'render-zybook', 'render-contents' ],
     actions: {
-      expandChapter() {
-        this.toggleProperty('toExpand');
+        expandChapter() {
+            this.toggleProperty('toExpand');
         },
-      },
+    },
 });

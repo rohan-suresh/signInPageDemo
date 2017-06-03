@@ -25,10 +25,10 @@ export default Ember.Component.extend({
         }
         let firstTwoSubString = '';
 
-        firstTwoSubs.forEach(s => {
-            firstTwoSubString = `${firstTwoSubString}${s}, `;
+        firstTwoSubs.forEach(ss => {
+            firstTwoSubString = `${firstTwoSubString}${ss}, `;
         });
-        firstTwoSubString = firstTwoSubString.slice(0, -2);
+        firstTwoSubString = firstTwoSubString.slice(0, firstTwoSubString.length - 2);
         return firstTwoSubString;
     }.property('zybook.subjects.@each.name'),
 });
