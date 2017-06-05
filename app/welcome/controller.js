@@ -44,6 +44,11 @@ export default Ember.Controller.extend({
      @return {}
      */
 
+    title: null,
+    reset(rName) {
+        this.set('title', rName);
+    },
+
     actions: {
         login: function() {
             this.get('session').login(this.get('store_email'), this.get('store_password')).then(success => {

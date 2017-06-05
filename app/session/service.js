@@ -35,6 +35,8 @@ export default Ember.Service.extend({
                     this.set('user', serverResponse.user);
                     this.set('session', serverResponse.session);
                     if (serverResponse.success) {
+                        window.localStorage.setItem('zyClientUser', JSON.stringify(serverResponse.user));
+                        window.localStorage.setItem('zyClientSession', JSON.stringify(serverResponse.session));
                         resolve(serverResponse.success);
                     }
                     else {

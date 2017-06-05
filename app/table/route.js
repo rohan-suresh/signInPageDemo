@@ -1,19 +1,8 @@
 import Ember from 'ember';
+import routeTitle from '../mixins/route-title';
+import storeAuth from '../mixins/store-auth';
 
-export default Ember.Route.extend({
-    authentication: Ember.inject.service('session'),
-
-    /*
-    @method beforeModel
-    @param {}
-    @return {}
-     */
-
-    beforeModel() {
-        if (!this.get('authentication.session.auth_token')) {
-            this.replaceWith('welcome');
-        }
-    },
+export default Ember.Route.extend(routeTitle, storeAuth, {
 
     /*
     @method model
