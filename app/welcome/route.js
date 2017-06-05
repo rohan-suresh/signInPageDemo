@@ -3,7 +3,7 @@ import routeTitle from '../mixins/route-title';
 
 export default Ember.Route.extend(routeTitle, {
     authentication: Ember.inject.service('session'),
-    beforeModel() {
+    beforeModel: function() {
         if (window.localStorage.getItem('zyClientSession') && window.localStorage.getItem('zyClientUser')) {
             this.set('authentication.session', JSON.parse(window.localStorage.getItem('zyClientSession')));
             this.set('authentication.user', JSON.parse(window.localStorage.getItem('zyClientUser')));

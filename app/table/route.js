@@ -10,7 +10,7 @@ export default Ember.Route.extend(routeTitle, storeAuth, {
     @return {Promise}
      */
 
-    model(params) {
+    model: function(params) {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
                 url: `https://zyserver-dev.zybooks.com/v1/user/${this.get('authentication.user.user_id')}/zybooks`,

@@ -19,7 +19,7 @@ export default Ember.Component.extend({
     */
 
     actions: {
-        expandChapter() {
+        expandChapter: function() {
             this.toggleProperty('toExpand');
         },
     },

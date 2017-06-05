@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     @return {}
       */
 
-    beforeModel() {
+    beforeModel: function() {
         this.replaceWith('welcome');
     },
 });
