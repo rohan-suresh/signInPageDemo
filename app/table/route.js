@@ -2,11 +2,25 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     authentication: Ember.inject.service('session'),
+
+    /*
+    @method beforeModel
+    @param {}
+    @return {}
+     */
+
     beforeModel() {
         if (!this.get('authentication.session.auth_token')) {
             this.replaceWith('welcome');
         }
     },
+
+    /*
+    @method model
+    @param {params}
+    @return {Promise}
+     */
+
     model(params) {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({

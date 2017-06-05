@@ -1,16 +1,33 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    zybook_clicked_action: null,
+
+    /*
+    @property zybook
+    @type {Object}
+    @default null
+     */
     zybook: null,
     classNames: [ 'render-zybook' ],
-    subjects: null,
+
+    /*
+    @event term_description
+    @param {}
+    @return {zybook.academic_term.name, zybook.academic_term.year}
+     */
     term_description: function() {
         if (this.get('zybook.academic_term.name') === 'None') {
             return '';
         }
         return `${this.get('zybook.academic_term.name')} ${this.get('zybook.academic_term.year')}`;
     }.property('zybook.academic_term.name', 'zybook.academic_term.year'),
+
+    /*
+     @event subject_description
+     @param {}
+     @return {zybook.subjects.@each.name}
+     */
+
     subject_description: function() {
         const subs = [];
 

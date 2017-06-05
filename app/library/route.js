@@ -3,11 +3,25 @@ import ZyBookModel from '../models/zybook';
 
 export default Ember.Route.extend({
     authentication: Ember.inject.service('session'),
+
+    /*
+    @method beforeModel
+    @param {}
+    @return {}
+     */
+
     beforeModel() {
         if (!this.get('authentication.session.auth_token')) {
             this.replaceWith('welcome');
         }
     },
+
+    /*
+    @method model
+    @param {}
+    @return {Promise}
+     */
+
     model() {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
