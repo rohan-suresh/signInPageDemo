@@ -2,28 +2,26 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
 
-    /*
-    @property user
-    @type {Object}
-    @default null
+    /**
+      @property user
+      @type {Object}
+      @default null
      */
-
     user: null,
 
-    /*
-    @property session
-    @type {Object}
-    @default null
+    /**
+      @property session
+      @type {Object}
+      @default null
      */
-
     session: null,
 
-    /*
-    @method login
-    @param {email, password}
-    @return {Promise}
+    /**
+      @method login
+      @param {String} email from user
+      @param {String} password from user
+      @return {Promise}
      */
-
     login: function(email, password) {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({

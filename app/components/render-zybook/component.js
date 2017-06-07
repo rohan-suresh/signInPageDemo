@@ -2,18 +2,20 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
-    /*
-    @property zybook
-    @type {Object}
-    @default null
+    /**
+      @property zybook
+      @type {Object}
+      @default null
      */
     zybook: null,
     classNames: [ 'render-zybook' ],
 
-    /*
-    @event term_description
-    @param {}
-    @return {zybook.academic_term.name, zybook.academic_term.year}
+    /**
+      Computed property that returns term name and year
+      @event term_description
+      @param {String} zybook.academic_term.name Name of the academic term
+      @param {String} zybook.academic_term.year Year
+      @return {String}
      */
     term_description: function() {
         if (this.get('zybook.academic_term.name') === 'None') {
@@ -22,24 +24,15 @@ export default Ember.Component.extend({
         return `${this.get('zybook.academic_term.name')} ${this.get('zybook.academic_term.year')}`;
     }.property('zybook.academic_term.name', 'zybook.academic_term.year'),
 
-    /*
-     @event subject_description
-     @param {}
-     @return {zybook.subjects.@each.name}
+    /**
+      @event subject_description
+      @return {name}
      */
-
     subject_description: function() {
-        const subs = [];
+        const subs = this.get('zybook.subjects').map(sub => sub.name);
 
-        this.get('zybook.subjects').forEach(sub => {
-            subs.push(sub.name);
-        });
-        let firstTwoSubs = [];
+        const firstTwoSubs = subs.length > 2 ? subs.slice(0, 2) : subs;
 
-        firstTwoSubs = subs;
-        if (subs.length > 2) {
-            firstTwoSubs = subs.slice(0, 2);
-        }
         let firstTwoSubString = '';
 
         firstTwoSubs.forEach(ss => {

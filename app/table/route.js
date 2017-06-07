@@ -4,12 +4,16 @@ import storeAuth from '../mixins/store-auth';
 
 export default Ember.Route.extend(routeTitle, storeAuth, {
 
-    /*
-    @method model
-    @param {params}
-    @return {Promise}
-     */
+  setupController(controller, model) {
+    this._super(controller, model);
+    controller.reset();
+  },
 
+    /**
+      @method model
+      @param {params} params for model
+      @return {Promise}
+     */
     model: function(params) {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
