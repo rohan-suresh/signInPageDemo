@@ -10,12 +10,14 @@
           <th>Chapter Number</th>
           <th>Section Number</th>
           <th>User ID</th>
+          <th>Date</th>
         </tr>
-          {{#each userActivity as |activity|}}
+          {{#each lastFive as |activity|}}
           <tr>
             <td>{{activity.chapter_number}}</td>
             <td>{{activity.section_number}}</td>
             <td>{{activity.user_id}}</td>
+            <td>{{activity.date}}</td>
           </tr>
           {{/each}}
         </table> </div>

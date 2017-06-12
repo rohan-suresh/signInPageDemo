@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
 
-  getActions: function() {
+  getActions: function(zybook_code, user_id) {
     return new Ember.RSVP.Promise((resolve, reject) => {
       Ember.$.ajax({
-        url: 'http://localhost:5000/getData',
+        url: `http://localhost:5000/zybook/${zybook_code}/events/${user_id}`,
         method: 'GET',
         contentType: null,
         success: serverResponse => {
@@ -40,7 +40,7 @@ export default Ember.Service.extend({
           if (parsedSR.success) {
             //console.log("SERVER RESPONSE:");
             //console.log(parsedSR.success);
-            resolve(parsedSR.success);
+            resolve(parsedSR.events);
           }
           else {
             reject();
