@@ -30,6 +30,7 @@ export default Ember.Route.extend(routeTitle, storeAuth, {
                         }
                     });
                     if (serverResponse.success) {
+                        console.log(selected_zybook);
                         resolve(selected_zybook);
                     }
                     else {

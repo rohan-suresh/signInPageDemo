@@ -27,13 +27,13 @@ export default Ember.Service.extend({
     });
 
   },
-  trackActions: function(zybook_code, user_id) {
+  trackActions: function(zybook_code, user_id, sectionNum, chapterNum) {
     return new Ember.RSVP.Promise((resolve, reject) => {
       Ember.$.ajax({
-        url: 'http://localhost:5000/postData',
+        url: `http://localhost:5000/zybook/${zybook_code}/event`,
         method: 'POST',
         contentType: 'application/json',
-        data: JSON.stringify({ zybook_code, user_id }),
+        data: JSON.stringify({ zybook_code, user_id, sectionNum, chapterNum }),
         success: serverResponse => {
           //console.log('success');
           const parsedSR = JSON.parse(serverResponse);

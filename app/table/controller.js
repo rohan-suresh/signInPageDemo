@@ -15,8 +15,8 @@ export default Ember.Controller.extend({
 
   actions: {
 
-    postData: function() {
-      this.get('userActions').trackActions(this.get('zybook_code'), this.get('user_id.user.user_id')).then(success => {
+    postData: function(sectionNum, chapterNum) {
+      this.get('userActions').trackActions(this.get('zybook_code'), this.get('user_id.user.user_id'), sectionNum, chapterNum).then(success => {
         this.set('userTrack', success);
       })
     }
