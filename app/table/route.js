@@ -6,7 +6,7 @@ export default Ember.Route.extend(routeTitle, storeAuth, {
 
   setupController(controller, model) {
     this._super(controller, model);
-    controller.reset();
+    controller.displayGet();
   },
 
     /**

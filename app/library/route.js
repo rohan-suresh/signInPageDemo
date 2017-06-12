@@ -25,6 +25,7 @@ export default Ember.Route.extend(routeTitle, storeAuth, {
                         user_zybooks.push(zyBook);
                     });
                     if (serverResponse.success) {
+                        //console.log(user_zybooks);
                         resolve(user_zybooks);
                     }
                     else {

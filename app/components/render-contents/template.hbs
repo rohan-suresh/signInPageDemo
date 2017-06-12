@@ -3,7 +3,7 @@
   {{#if toExpand}}
     <div class="sections">
       {{#each chapter.sections as |section|}}
-        <div class="sec-titles">{{section.title}}</div>
+        <div class="sec-titles" {{action 'sectionClicked'}}>{{section.title}}</div>
       {{/each}}
     </div>
   {{/if}}

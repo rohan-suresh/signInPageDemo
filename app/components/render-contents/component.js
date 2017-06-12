@@ -10,6 +10,7 @@ export default Ember.Component.extend({
     toExpand: false,
     auth: Ember.inject.service('session'),
     classNames: [ 'render-zybook', 'render-contents' ],
+    clickedAction: null,
 
     actions: {
 
@@ -20,5 +21,8 @@ export default Ember.Component.extend({
         expandChapter: function() {
             this.toggleProperty('toExpand');
         },
+        sectionClicked: function() {
+          this.get('clickedAction')();
+        }
     },
 });

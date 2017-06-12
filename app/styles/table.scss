@@ -5,3 +5,15 @@ button.signout {
   width: 10%;
   color: white;
 }
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  background-color: #C2CCD1;
+}
+
+.outside {
+  display: flex;
+  flex-direction: row;
+}
