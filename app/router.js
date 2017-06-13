@@ -8,7 +8,6 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
     this.route('welcome');
-    this.route('start');
     this.route('library');
     this.route('table', { path: 'table/:zybook_code' });
 });

@@ -4,12 +4,10 @@ import storeAuth from '../mixins/store-auth';
 
 export default Ember.Route.extend(routeTitle, storeAuth, {
 
-
-
-  setupController(controller, model) {
-    this._super(controller, model);
-    controller.displayGet();
-  },
+    setupController(controller, model) {
+        this._super(controller, model);
+        controller.displayGet();
+    },
 
     /**
       @method model
@@ -32,7 +30,6 @@ export default Ember.Route.extend(routeTitle, storeAuth, {
                         }
                     });
                     if (serverResponse.success) {
-                        console.log(selected_zybook);
                         resolve(selected_zybook);
                     }
                     else {

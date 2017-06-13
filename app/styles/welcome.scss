@@ -1,47 +1,45 @@
 div.center {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  input[type=email], input[type=password] {
-    padding: 6px;
-    margin: 5px;
-    display: inline-block;
-    box-sizing: border-box;
-    text-align: left;
-    border-top: hidden;
-    border-left: hidden;
-    border-right: hidden;
-    border-bottom: ridge dodgerblue 1px;
-    font-size: 12px;
-    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    input[type=email], input[type=password] {
+        padding: 6px;
+        margin: 5px;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: left;
+        border-top: hidden;
+        border-left: hidden;
+        border-right: hidden;
+        border-bottom: ridge dodgerblue 1px;
+        font-size: 12px;
+        margin-top: 15px;
   }
-  margin-bottom: 20px;
-
 }
 
-
 button.button {
-  text-align: center;
-  width: 200px;
-  height: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  font-size: 16px;
-  color: white;
-  background-color: darkorange;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: darkorange;
   }
 
 div.check {
-  text-align: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  font-size: 18px;
-  color: dodgerblue;
+    text-align: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 18px;
+    color: dodgerblue;
 }

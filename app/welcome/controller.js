@@ -46,15 +46,6 @@ export default Ember.Controller.extend({
      */
     title: null,
 
-    /**
-     @method login
-     @paramType {String}
-     @param {String} rName reset
-     @return {void}
-     */
-    reset(rName) {
-        this.set('title', rName);
-    },
 
     actions: {
 

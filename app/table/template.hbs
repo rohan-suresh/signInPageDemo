@@ -1,7 +1,7 @@
 <div class="outside">
   <div class="chapters">
-    {{#each model.chapters as |tableUnit|}}
-      {{render-contents chapter=tableUnit clickedAction=(action 'postData')}}
+    {{#each model.chapters as |chapter|}}
+      {{render-contents chapter=chapter clickedAction=(action 'recordEvent')}}
     {{/each}}
   </div>
     <div class="actions">

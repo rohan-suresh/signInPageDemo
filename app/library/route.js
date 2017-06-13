@@ -5,10 +5,6 @@ import storeAuth from '../mixins/store-auth';
 
 export default Ember.Route.extend(routeTitle, storeAuth, {
 
-    /**
-      @method model
-      @return {Promise}
-     */
     model: function() {
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
@@ -25,7 +21,6 @@ export default Ember.Route.extend(routeTitle, storeAuth, {
                         user_zybooks.push(zyBook);
                     });
                     if (serverResponse.success) {
-                        //console.log(user_zybooks);
                         resolve(user_zybooks);
                     }
                     else {
