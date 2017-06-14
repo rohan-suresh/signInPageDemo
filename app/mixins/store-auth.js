@@ -1,7 +1,6 @@
 import Ember from 'ember';
 export default Ember.Mixin.create({
 
-
     authentication: Ember.inject.service('session'),
 
     beforeModel: function() {
