@@ -17,7 +17,7 @@
             <td>{{activity.chapter_number}}</td>
             <td>{{activity.section_number}}</td>
             <td>{{activity.user_id}}</td>
-            <td>{{activity.date}}</td>
+            <td> {{moment-from-now activity.date interval=1}}</td> {{!{{activity.date}}
           </tr>
           {{/each}}
         </table> </div>
