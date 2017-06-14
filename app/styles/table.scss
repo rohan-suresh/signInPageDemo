@@ -1,0 +1,19 @@
+button.signout {
+  margin-left: 45%;
+  margin-top: 30px;
+  background-color: dodgerblue;
+  width: 10%;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  background-color: #C2CCD1;
+}
+
+.outside {
+  display: flex;
+  flex-direction: row;
+}

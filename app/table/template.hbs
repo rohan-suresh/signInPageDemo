@@ -1,0 +1,25 @@
+<div class="outside">
+  <div class="chapters">
+    {{#each model.chapters as |chapter|}}
+      {{render-contents chapter=chapter clickedAction=(action 'recordEvent')}}
+    {{/each}}
+  </div>
+    <div class="actions">
+        <div> <table>
+        <tr>
+          <th>Chapter Number</th>
+          <th>Section Number</th>
+          <th>User ID</th>
+          <th>Date</th>
+        </tr>
+          {{#each lastFive as |activity|}}
+          <tr>
+            <td>{{activity.chapter_number}}</td>
+            <td>{{activity.section_number}}</td>
+            <td>{{activity.user_id}}</td>
+            <td> {{moment-from-now activity.date interval=1}}</td>
+          </tr>
+          {{/each}}
+        </table> </div>
+    </div>
+</div>

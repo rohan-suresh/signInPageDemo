@@ -1,0 +1,10 @@
+<div class="chapters">
+  <button class='chapter-button' {{action 'expandChapter'}}> {{chapter.title}} </button>
+  {{#if toExpand}}
+    <div class="sections">
+      {{#each chapter.sections as |section|}}
+        <div class="sec-titles" {{action 'sectionClicked' section.number}}>{{section.title}}</div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

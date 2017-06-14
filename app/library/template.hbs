@@ -1,0 +1,6 @@
+
+<div class="zybooks">
+{{#each model as |zybook|}}
+  {{render-zybook zybook=zybook zybook_clicked_action=(action "componentClicked")}}
+{{/each}}
+</div>

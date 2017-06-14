@@ -1,0 +1,30 @@
+div.top {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #528CE0;
+  text-align: left;
+  font-size: 24px;
+  color: #FFFFFF;
+  font-family: "Apple SD Gothic Neo";
+  margin-bottom: 40px;
+  padding: 0;
+  margin-left: 0px;
+  justify-content: space-between;
+
+  button.signout {
+    margin-top: 0px;
+    width: 5%;
+    background-color: darkorange;
+  }
+}
+
+button.signout {
+  margin-left: 45%;
+  margin-top: 30px;
+  background-color: dodgerblue;
+  width: 10%;
+  color: white;
+}
+
+
